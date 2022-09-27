@@ -1,0 +1,193 @@
+body {
+    margin: 0;
+}
+
+header {
+    padding-left: 40px;
+    padding-right: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 150px;
+    background-color: orange;
+}
+
+header h2 {
+    border-bottom: 2px solid;
+    color: white;
+}
+
+header img {
+    max-height: 50px;
+}
+
+.logo {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: xx-large;
+
+}
+
+.logo p {
+    padding-left: 5px;
+}
+
+.pic {
+    height: 250px;
+    object-fit: cover;
+}
+
+.pic img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.restaurant {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+    color: orange;
+}
+
+.restaurant img {
+    height: 35px;
+}
+
+.restaurant h1 {
+    color: black;
+    font-size: 48px;
+    margin-bottom: 5px;
+}
+
+.stars {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+
+}
+
+.rest-right {
+    margin: 20px;
+}
+
+.rest-right img {
+    height: 60px;
+}
+
+.rest-right img:hover {
+    cursor: pointer;
+}
+
+.leiste {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgba(115, 133, 92, 0.596);
+    height: 50px;
+    color: black;
+}
+
+.leiste div:hover {
+    cursor: pointer;
+    color: white;
+}
+
+.leiste div {
+    font-size: 30px;
+}
+
+.white {
+    color: white;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.plus{
+    font-size: 20px;
+    border-left: 1px solid;
+    border-bottom: 1px solid;
+    border-color: black;
+    color: blue;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+}
+.plus:hover {
+    cursor: pointer;
+    color: orange;
+}
+
+.choice {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    border: 1px solid;
+    height: 85px;
+    width: 90%;
+    
+    font-size: 20px;
+}
+.choice p{
+    margin-top: 15px;
+}
+.desc{
+    padding: 10px;
+}
+
+.korb div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+}
+
+.korb img:hover {
+    cursor: pointer;
+}
+.korb img{
+    height: 25px;
+    width: 25px;
+}
+
+
+.left {
+    width: 75%;
+}
+
+.right {
+    position: sticky;
+    width: 30%;
+    text-align: center;
+    box-shadow: 0px 2px 2px 0px;
+}
+
+.right p {
+    font-size: 32px;
+}
+.flex{
+    display: flex;
+}
+.summe{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    text-align: left;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.sumelement {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
