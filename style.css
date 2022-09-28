@@ -13,6 +13,10 @@ body {
     font-family: Ubuntu;
 }
 
+h1, p{
+    font-family: Raleway;
+}
+
 header {
     padding-left: 40px;
     padding-right: 40px;
