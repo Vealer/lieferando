@@ -68,7 +68,6 @@ header img {
     display: flex;
     align-items: center;
     font-size: 20px;
-
 }
 
 .rest-right {
@@ -112,6 +111,7 @@ header img {
     justify-content: space-around;
     align-items: center;
 }
+
 .plus{
     font-size: 20px;
     border-left: 1px solid;
@@ -122,6 +122,7 @@ header img {
     width: 30px;
     text-align: center;
 }
+
 .plus:hover {
     cursor: pointer;
     color: orange;
@@ -140,6 +141,7 @@ header img {
 .choice p{
     margin-top: 15px;
 }
+
 .desc{
     padding: 10px;
 }
@@ -154,11 +156,11 @@ header img {
 .korb img:hover {
     cursor: pointer;
 }
+
 .korb img{
     height: 25px;
     width: 25px;
 }
-
 
 .left {
     width: 75%;
@@ -174,9 +176,11 @@ header img {
 .right p {
     font-size: 32px;
 }
+
 .flex{
     display: flex;
 }
+
 .summe{
     padding-top: 15px;
     padding-bottom: 15px;

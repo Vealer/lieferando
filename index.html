@@ -1,63 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lieferando</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <script src="script.js"></script>
-</head>
+  </head>
 
-<body onload="render()">
+  <body onload="init()">
     <header>
-        <div class="logo">
-            <img src="img/LogoMakr-0Qj8Ut.png">
-            <p>Lieferdings.de</p>
-        </div>
-        <h2>
-            Lindenstraße 24, Minden
-        </h2>
-        <div>
-            <img src="img/LogoMakr-33wRjS.png">
-        </div>
+      <div class="logo">
+        <img src="img/LogoMakr-0Qj8Ut.png" />
+        <p>Lieferdings.de</p>
+      </div>
+      <h2>Lindenstraße 24, Minden</h2>
+      <div>
+        <img src="img/LogoMakr-33wRjS.png" />
+      </div>
     </header>
     <div class="flex">
-        <div class="left">
-            <div class="pic">
-                <img src="img/langos.jpg">
-            </div>
-            <div class="restaurant">
-                <div class="rest-left">
-                    <h1>Avanti Restauraunt</h1>
-                    <div class="stars">
-                        <img src="img/LogoMakr-stars.png">
-                        <p>(701 Bewertungen)</p>
-                    </div>
-                </div>
-
-                <div class="rest-right">
-                    <img src="img/LogoMakr-ibutton.png">
-                    <img src="img/LogoMakr-heart.png">
-                </div>
-
-
-            </div>
-            <div id="Oben" class="leiste"></div>
-            <br />
-            <div id="Unten" class="menu"></div>
-
+      <div class="left">
+        <div class="pic">
+          <img src="img/langos.jpg" />
         </div>
-        <div class="right">
-            <p>Warenkorb</p>
-            <div id="Warenkorb" class="korb"></div>
-            <div id="summe" class="summe"></div>
+        <div class="restaurant">
+          <div class="rest-left">
+            <h1>Avanti Restauraunt</h1>
+            <div class="stars">
+              <img src="img/LogoMakr-stars.png" />
+              <p>(701 Bewertungen)</p>
+            </div>
+          </div>
+          <div class="rest-right">
+            <img src="img/LogoMakr-ibutton.png" />
+            <img src="img/LogoMakr-heart.png" />
+          </div>
         </div>
+        <div id="Oben" class="leiste"></div>
+        <br />
+        <div id="Unten" class="menu"></div>
+      </div>
+      <div class="right">
+        <p>Warenkorb</p>
+        <div id="Warenkorb" class="korb"></div>
+        <div id="summe" class="summe">
+          <div class="sumelement">
+            <div>Lieferkosten:</div>
+            <div>3,00 €</div>
+          </div>
+          <div class="sumelement">
+            <div>Zwischensumme:</div>
+            <div id="zwischensumme">0 €</div>
+          </div>
+          <div class="sumelement">
+            <div><b>Gesamt:</b></div>
+            <div><b id="total">3,00 €</b></div>
+          </div>
+        </div>
+      </div>
     </div>
-    <footer>
-        Copyright Logos by LogoMakr.com
-    </footer>
-</body>
-
+    <footer>Copyright Logos by LogoMakr.com</footer>
+  </body>
 </html>
