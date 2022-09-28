@@ -40,6 +40,7 @@ let sum = 0;
 function init() {
   renderTitle();
   renderMenu(0);
+  renderSum();
 }
 
 function renderTitle() {
@@ -115,6 +116,7 @@ function renderWarenkorbHTML(i, element) {
 function renderSum() {
   let zwischensumme = sum;
   sum += lieferkosten;
+  document.getElementById('lieferkosten').innerHTML = `${lieferkosten.toFixed(2).replace(".", ",")} €`;
   document.getElementById('zwischensumme').innerHTML = `${zwischensumme.toFixed(2).replace(".", ",")} €`;
   document.getElementById('total').innerHTML = `${sum.toFixed(2).replace(".", ",")} €`;
 }
