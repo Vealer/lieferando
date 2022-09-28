@@ -38,7 +38,6 @@ header img {
     justify-content: center;
     align-items: center;
     font-size: xx-large;
-
 }
 
 .logo p {
@@ -98,7 +97,7 @@ header img {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: rgba(115, 133, 92, 0.596);
+    background-color: rgba(103, 176, 103, 0.8);
     height: 50px;
     color: black;
 }
@@ -136,7 +135,7 @@ header img {
 
 .plus:hover {
     cursor: pointer;
-    color: orange;
+    color: rgba(103, 176, 103, 0.8);
 }
 
 .choice {
@@ -144,11 +143,12 @@ header img {
     justify-content: space-between;
     margin: 10px;
     border: 1px solid;
+    box-shadow: 5px 5px 8px rgb(0 0 0 / 10%);
     height: 85px;
     width: 90%;
-    
     font-size: 20px;
 }
+
 .choice p{
     margin-top: 15px;
 }
