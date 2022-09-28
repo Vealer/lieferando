@@ -51,6 +51,7 @@ header img {
 .pic {
     height: 250px;
     object-fit: cover;
+    border: 10px solid rgba(195, 213, 213, 0.4);
 }
 
 .pic img {
