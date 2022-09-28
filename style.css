@@ -102,22 +102,26 @@ header img {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: rgba(103, 176, 103, 0.8);
+    background: linear-gradient(180deg, rgba(103, 176, 103, 1), rgba(103, 176, 103, 0.6)) ;
     height: 50px;
     color: black;
 }
 
 .leiste div:hover {
     cursor: pointer;
-    color: white;
+    color: rgb(224, 236, 237);
+}
+
+.d-none{
+    display: none;
 }
 
 .leiste div {
-    font-size: 30px;
+    font-size: 1.2rem;
 }
 
 .white {
-    color: white;
+    color: rgb(224, 236, 237);
 }
 
 .menu {
@@ -210,4 +214,16 @@ header img {
     display: flex;
     justify-content: space-between;
     margin: 10px;
+}
+
+@media screen and (max-width: 800px) {
+    .right{
+        display: none;
+    } 
+    .left{
+        width: 100%;
+    }
+    h2{
+        display: none;
+    }
 }
