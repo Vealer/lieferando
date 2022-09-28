@@ -1,6 +1,6 @@
 let menuList = [
   {
-    title: "Beliebte Gerichte",
+    title: "Favoriten",
     menu: ["Cheeseburger", "Pizza Salami", "Gyros Tasche", "Pommes", "Lahmancun"],
     price: [4.5, 6.5, 5.3, 2.5, 5.5],
   },
