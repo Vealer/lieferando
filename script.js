@@ -29,8 +29,8 @@ let menuList = [
   },
   {
     title: "Beilagen",
-    menu: ["Pommes", "Bratkartoffeln", "Chicken Nuggets", "Currywurst", "Pizzabrötchen"],
-    price: [2.5, 3.5, 4.3, 2.5, 1.5],
+    menu: ["Pommes", "Cheeseburger", "Chicken Nuggets", "Currywurst", "Pizzabrötchen"],
+    price: [2.5, 4.5, 4.3, 2.5, 1.5],
     desc: "Wahl aus: mit Ketchup, mit Mayonaise, ohne Dip, mit Kräuterbutter.",
     img: "img/burger.jpg",
   },

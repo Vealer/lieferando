@@ -177,13 +177,12 @@ header img {
 .choiceImg {
   margin: 10px;
   border: 1px solid;
-  box-shadow: 5px 5px 8px rgb(0 0 0 / 10%);
   width: 90%;
   height: 150px;
 }
 
 .choiceImg img{
-    height: 150px;
+    height: 148px;
     width: 100%;
     object-fit: cover;
   }
