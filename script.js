@@ -10,8 +10,8 @@ let menuList = [
     title: "Pizza",
     menu: ["Pizza Salami", "Pizza Thunfisch", "Pizza Toscana", "Pizza Hawaii", "Pizza Gyros", "Pizza Mexikana"],
     price: [6.0, 5.5, 4.8, 7.0, 4.9, 6.9],
-    desc: "Wahl aus: Klein, Ø 26cm, Groß, Ø 30cm, Familie, 33cm x 46cm oder Party, 40cm x 60cm.",
-    select: ['Ø 26cm', 'Ø 30cm', '33cm x 46cm', '40cm x 60cm'],
+    desc: "Wahl aus: Extra Käse, Zaziki, Hackfleischsauce, Extra Zwiebeln",
+    select: ["Extra Käse", "Zaziki", "Hackfleischsauce", "Extra Zwiebeln"],
     dialog: "Auswahl Größe:",
     img: "img/pizza.jpg",
   },
@@ -19,8 +19,8 @@ let menuList = [
     title: "Salate",
     menu: ["Bauernsalat", "Gemischter Salat", "Hühnchensalat", "Griechischer Salat", "Nudelsalat"],
     price: [2.3, 2.2, 5.2, 3.0, 4.2],
-    desc: "Wahl aus: mit Balsamico-Dressing, mit Joghurt-Dressing, ohne Dressing, mit French-Dressing.",
-    select: ['Balsamico-Dressing', 'Joghurt-Dressing', 'ohne Dressing', 'French-Dressing'],
+    desc: "Wahl aus: mit Balsamico-Dressing, mit Joghurt-Dressing, mit Amercian-Dressing, mit French-Dressing.",
+    select: ["Balsamico-Dressing", "Joghurt-Dressing", "American-Dressing", "French-Dressing"],
     dialog: "Auswahl Dressing:",
     img: "img/salat.jpg",
   },
@@ -28,8 +28,8 @@ let menuList = [
     title: "Gyros",
     menu: ["Gyros Pita", "Gyros Pita Käse", "Gyros Tasche", "Gyros Teller", "Gyros Box", "Super Dürüm"],
     price: [3.7, 4.7, 6.0, 9.5, 3.0, 6.7],
-    desc: "Wahl aus: mit Zaziki, mit Kräutersauce, ohne Dip, mit Fetakäse, mit Gurken, scharf, extra und mehr.",
-    select: ['Zaziki', 'Kräutersauce', 'Fetakäse', 'Scharf'],
+    desc: "Wahl aus: mit Zaziki, mit Kräutersauce, mit Fetakäse, mit Gurken, scharf, extra und mehr.",
+    select: ["Zaziki", "Kräutersauce", "Fetakäse", "Scharf"],
     dialog: "Auswahl Extras:",
     img: "img/gyros.jpg",
   },
@@ -37,8 +37,8 @@ let menuList = [
     title: "Beilagen",
     menu: ["Pommes", "Cheeseburger", "Chicken Nuggets", "Currywurst", "Pizzabrötchen"],
     price: [2.5, 4.5, 4.3, 2.5, 1.5],
-    desc: "Wahl aus: mit Ketchup, mit Mayonaise, ohne Dip, mit Kräuterbutter.",
-    select: ['Ketchup', 'Mayonaise', 'ohne Dip', 'Kräuterbutter'],
+    desc: "Wahl aus: mit Ketchup, mit Mayonaise, mit Pommessauce, mit Kräuterbutter.",
+    select: ["Ketchup", "Mayonaise", "Pommessauce", "Kräuterbutter"],
     dialog: "Auswahl Dip:",
     img: "img/burger.jpg",
   },
@@ -192,14 +192,43 @@ function renderExtrasHTML(index, i) {
     <div>
       <h4>${menuList[index].menu[i]}</h4>
       <h6>${menuList[index].dialog}</h6>
-      <select class="form-select" aria-label="Default select example">
-        <option value="0" selected>${menuList[index].select[0]}</option>
-        <option value="1">${menuList[index].select[1]}</option>
-        <option value="2">${menuList[index].select[2]}</option>
-        <option value="3">${menuList[index].select[3]}</option>
-      </select>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="0" checked>
+        <label class="form-check-label" >
+        ${menuList[index].select[0]}
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="1" >
+        <label class="form-check-label">
+        ${menuList[index].select[1]}
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="2" >
+        <label class="form-check-label" >
+        ${menuList[index].select[2]}
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="3" >
+        <label class="form-check-label">
+        ${menuList[index].select[3]}
+        </label>
+      </div>
+      <div class="bottom"><button type="button" onclick="addChoiceExtra(${
+        (index)
+      }, ${i})" class="btn btn-primary center mt-4">${menuList[index].price[i].toFixed(2).replace(".", ",")} €</button></div>
     </div>
   `;
+}
+
+function addChoiceExtra(index, i) {
+  let bestellung = menuList[index].menu[i];
+  let preis = menuList[index].price[i];
+  addChoice(bestellung, preis);
+  closeChoiceDialog();
+  renderWarenkorb();
 }
 
 function minusChoice(index) {
