@@ -104,7 +104,8 @@ function renderWarenkorb() {
 function renderWarenkorbHTML(i, element) {
   return `<div>
             <div>
-                <div onclick='deleteChoice(${i})'><img src="img/LogoMakr-waste.png"></div>
+                <div onclick='plusChoice(${i})'><img src="img/plus.png"></div>
+                <div onclick='minusChoice(${i})'><img src="img/minus.png"></div>
                 <b>${menge[i]} x ${element}</b>
             </div> 
             <div> 
@@ -116,15 +117,33 @@ function renderWarenkorbHTML(i, element) {
 function renderSum() {
   let zwischensumme = sum;
   sum += lieferkosten;
-  document.getElementById('lieferkosten').innerHTML = `${lieferkosten.toFixed(2).replace(".", ",")} €`;
-  document.getElementById('zwischensumme').innerHTML = `${zwischensumme.toFixed(2).replace(".", ",")} €`;
-  document.getElementById('total').innerHTML = `${sum.toFixed(2).replace(".", ",")} €`;
+  document.getElementById("lieferkosten").innerHTML = `${lieferkosten.toFixed(2).replace(".", ",")} €`;
+  document.getElementById("zwischensumme").innerHTML = `${zwischensumme.toFixed(2).replace(".", ",")} €`;
+  document.getElementById("total").innerHTML = `${sum.toFixed(2).replace(".", ",")} €`;
 }
 
-function deleteChoice(index) {
-  auswahl.splice(index, 1);
-  auswahlPreis.splice(index, 1);
-  menge.splice(index, 1);
+function changeHeart(){
+  let heart = document.getElementById('heart');
+  if(heart.src.includes('img/heart-white.png'))
+    heart.src = 'img/heart-black.png'
+  else
+    heart.src = 'img/heart-white.png';
+}
+
+function minusChoice(index) {
+  if (menge[index] > 1) {
+    menge[index]--;
+  } else {
+    auswahl.splice(index, 1);
+    auswahlPreis.splice(index, 1);
+    menge.splice(index, 1);
+  }
+  renderWarenkorb();
+  renderSum();
+}
+
+function plusChoice(index) {
+  menge[index]++;
   renderWarenkorb();
   renderSum();
 }

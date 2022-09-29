@@ -181,7 +181,8 @@ header img {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 10px;
+    margin: 7px;
+    margin-left: 2px;
 }
 
 .korb img:hover {
@@ -197,8 +198,12 @@ header img {
     width: 75%;
 }
 
-.right {
+.sticky{
     position: sticky;
+    top: 20px;
+}
+
+.right {
     width: 30%;
     text-align: center;
     box-shadow: 0px 2px 2px 0px;
@@ -234,13 +239,13 @@ footer{
     margin: 10px;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 850px) {
     nav{
         display: none !important;
     }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 850px) {
     .right, h2, header{
         display: none;
     } 
