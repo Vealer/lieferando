@@ -89,7 +89,7 @@ function changeTitleColor(index) {
 
 function renderMenuHTML(i, articel, index) {
   return `
-    <div class="choice" >
+    <div id="choice${i}" onclick="openChoiceDialog(${index}, ${i})" class="choice" >
       <div class="desc">
         <b>${articel}</b>
         <span>${menuList[index].desc}</span>
@@ -157,6 +157,16 @@ function changeHeart(){
     heart.src = 'img/heart-white.png';
 }
 
+function openChoiceDialog(index, i){
+  if(menuList[index].desc){
+    document.getElementById('fullscreenChoice').classList.remove('d-none');
+  } else {
+    let bestellung = menuList[index].menu[i];
+    let preis = menuList[index].price[i];
+    addChoice(bestellung, preis)
+  }
+}
+
 function minusChoice(index) {
   if (menge[index] > 1) {
     menge[index]--;
@@ -184,5 +194,17 @@ fullscreenInfo.addEventListener("click", function (e) {
 });
 
 infoDialog.addEventListener("click", function (e) {
+  e.stopPropagation();
+});
+
+function closeChoiceDialog(){
+  document.getElementById('fullscreenChoice').classList.add('d-none');
+}
+
+fullscreenChoice.addEventListener("click", function (e) {
+  closeChoiceDialog();
+});
+
+ChoiceDialog.addEventListener("click", function (e) {
   e.stopPropagation();
 });
