@@ -122,6 +122,10 @@ function renderSum() {
   document.getElementById("total").innerHTML = `${sum.toFixed(2).replace(".", ",")} €`;
 }
 
+function renderInfo(){
+  document.getElementById('fullscreenInfo').classList.remove('d-none');
+}
+
 function changeHeart(){
   let heart = document.getElementById('heart');
   if(heart.src.includes('img/heart-white.png'))
@@ -147,3 +151,15 @@ function plusChoice(index) {
   renderWarenkorb();
   renderSum();
 }
+
+function closeInfoDialog(){
+  document.getElementById('fullscreenInfo').classList.add('d-none');
+}
+
+fullscreenInfo.addEventListener("click", function (e) {
+  closeInfoDialog();
+});
+
+infoDialog.addEventListener("click", function (e) {
+  e.stopPropagation();
+});
