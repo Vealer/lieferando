@@ -11,6 +11,7 @@ let menuList = [
     menu: ["Pizza Salami", "Pizza Thunfisch", "Pizza Toscana", "Pizza Hawaii", "Pizza Gyros", "Pizza Mexikana"],
     price: [6.0, 5.5, 4.8, 7.0, 4.9, 6.9],
     desc: "Wahl aus: Klein, Ø 26cm, Groß, Ø 30cm, Familie, 33cm x 46cm oder Party, 40cm x 60cm.",
+    dialog: "Auswahl Größe:",
     img: "img/pizza.jpg",
   },
   {
@@ -18,6 +19,7 @@ let menuList = [
     menu: ["Bauernsalat", "Gemischter Salat", "Hühnchensalat", "Griechischer Salat", "Nudelsalat"],
     price: [2.3, 2.2, 5.2, 3.0, 4.2],
     desc: "Wahl aus: mit Balsamico-Dressing, mit Joghurt-Dressing, ohne Dressing, mit French-Dressing und mehr.",
+    dialog: "Auswahl Dressing:",
     img: "img/salat.jpg",
   },
   {
@@ -25,6 +27,7 @@ let menuList = [
     menu: ["Gyros Pita", "Gyros Pita Käse", "Gyros Tasche", "Gyros Teller", "Gyros Box", "Super Dürüm"],
     price: [3.7, 4.7, 6.0, 9.5, 3.0, 6.7],
     desc: "Wahl aus: mit Zaziki, mit Kräutersauce, ohne Dip, mit Fetakäse, mit Gurken, scharf, extra und mehr.",
+    dialog: "Auswahl Extras:",
     img: "img/gyros.jpg",
   },
   {
@@ -32,6 +35,7 @@ let menuList = [
     menu: ["Pommes", "Cheeseburger", "Chicken Nuggets", "Currywurst", "Pizzabrötchen"],
     price: [2.5, 4.5, 4.3, 2.5, 1.5],
     desc: "Wahl aus: mit Ketchup, mit Mayonaise, ohne Dip, mit Kräuterbutter.",
+    dialog: "Auswahl Dip:",
     img: "img/burger.jpg",
   },
   {
@@ -160,11 +164,26 @@ function changeHeart(){
 function openChoiceDialog(index, i){
   if(menuList[index].desc){
     document.getElementById('fullscreenChoice').classList.remove('d-none');
+    renderExtras(index, i);
   } else {
     let bestellung = menuList[index].menu[i];
     let preis = menuList[index].price[i];
     addChoice(bestellung, preis)
   }
+}
+
+function renderExtras(index, i){
+  let extras = document.getElementById('ChoiceDialog');
+  extras.innerHTML = renderExtrasHTML(index, i);
+}
+
+function renderExtrasHTML(index, i){
+  return `
+    <div>
+      <h4>${menuList[index].menu[i]}</h4>
+      <h6>${menuList[index].dialog}</h6>
+    </div>
+  `;
 }
 
 function minusChoice(index) {
