@@ -1,342 +1,331 @@
 @font-face {
-    font-family: Raleway;
-    src: url('fonts/Raleway/Raleway-VariableFont_wght.ttf');
+  font-family: Raleway;
+  src: url("fonts/Raleway/Raleway-VariableFont_wght.ttf");
 }
 
 @font-face {
-    font-family: Ubuntu;
-    src: url('fonts/Ubuntu/Ubuntu-Regular.ttf');
+  font-family: Ubuntu;
+  src: url("fonts/Ubuntu/Ubuntu-Regular.ttf");
 }
 
 body {
-    margin: 0;
-    font-family: Ubuntu;
+  margin: 0;
+  font-family: Ubuntu;
 }
 
-h1, p{
-    font-family: Raleway;
+h1,
+p {
+  font-family: Raleway;
 }
 
-:root{
-    --color: linear-gradient(rgb(186, 98, 15),rgb(116, 88, 9));
+:root {
+  --color: linear-gradient(rgb(186, 98, 15), rgba(27, 20, 2, 0.8));
 }
 
 .navbar {
-    background: var(--color);
-    color: rgb(212, 222, 209) !important;
+  background: var(--color);
+  color: rgb(212, 222, 209) !important;
 }
 
-.navbar img{
-    max-height: 50px;
-
+.navbar img {
+  max-height: 50px;
 }
 
 .navbar-collapse {
-    flex-grow: unset;
+  flex-grow: unset;
 }
 
-a{
-    color: rgb(212, 222, 209) !important;
+a {
+  color: rgb(212, 222, 209) !important;
 }
 
 header {
-    padding-left: 40px;
-    padding-right: 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 70px;
-    background: var(--color);
+  padding-left: 40px;
+  padding-right: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  background: var(--color);
 }
 
-header h4 {
-    border-bottom: 2px solid;
-    color: rgb(212, 222, 209);
+header div{
+  color: rgb(212, 222, 209);
 }
 
 header img {
-    max-height: 50px;
+  max-height: 40px;
 }
 
 .logo {
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: xx-large;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-
 .logo p {
-    padding-left: 5px;
+  padding-left: 5px;
 }
 
 .pic {
-    height: 250px;
-    object-fit: cover;
-    border: 10px solid rgba(195, 213, 213, 0.4);
+  height: 250px;
+  object-fit: cover;
+  border: 10px solid rgba(195, 213, 213, 0.4);
 }
 
 .pic img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 
 .restaurant {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-left: 20px;
-    color: orange;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 20px;
+  color: orange;
 }
 
 .restaurant img {
-    height: 20px;
+  height: 30px;
 }
 
 .restaurant h1 {
-    color: black;
-    font-size: 48px;
-    margin-bottom: 5px;
+  color: black;
+  font-size: 48px;
+  margin-bottom: 5px;
 }
 
 .stars {
-    height: 20px;
-    display: flex;
-    align-items: center;
-    font-size: 15px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
 }
 
 .rest-right {
-    margin: 20px;
+  margin: 20px;
 }
 
-
-
 .rest-right img:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .leiste {
-    margin-top: 20px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background: var(--color);
-    height: 50px;
-    color: black;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: var(--color);
+  height: 50px;
+  color: black;
 }
 
 .leiste div:hover {
-    cursor: pointer;
-    color: rgb(224, 236, 237);
+  cursor: pointer;
+  color: rgb(224, 236, 237);
 }
 
-.d-none{
-    display: none;
+.d-none {
+  display: none;
 }
 
 .leiste div {
-    font-size: 1.2rem;
+  font-size: 1.2rem;
 }
 
 .white {
-    color: rgb(224, 236, 237);
+  color: rgb(224, 236, 237);
 }
 
 .menu {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.plus{
-    font-size: 20px;
-    border-left: 1px solid;
-    border-bottom: 1px solid;
-    border-color: black;
-    color: blue;
-    height: 30px;
-    width: 30px;
-    text-align: center;
+.plus {
+  font-size: 20px;
+  border-left: 1px solid;
+  border-bottom: 1px solid;
+  border-color: black;
+  color: blue;
+  height: 30px;
+  width: 30px;
+  text-align: center;
 }
 
 .plus:hover {
-    cursor: pointer;
-    color: rgba(103, 176, 103, 0.8);
+  cursor: pointer;
+  color: rgba(103, 176, 103, 0.8);
 }
 
 .choice {
-    display: flex;
-    justify-content: space-between;
-    margin: 10px;
-    border: 1px solid;
-    box-shadow: 5px 5px 8px rgb(0 0 0 / 10%);
-    height: 85px;
-    width: 90%;
-    font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+  border: 1px solid;
+  box-shadow: 5px 5px 8px rgb(0 0 0 / 10%);
+  height: 85px;
+  width: 90%;
+  font-size: 20px;
 }
 
-.desc{
-    padding: 10px;
+.desc {
+  padding: 10px;
 }
 
 .korb div {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 7px;
-    margin-left: 2px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 7px;
+  margin-left: 2px;
 }
 
 .fullscreen {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.3);
-    z-index: 10;
-  }
-
-.korb img:hover {
-    cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 10;
 }
 
-.korb img{
-    height: 25px;
-    width: 25px;
+.korb img:hover {
+  cursor: pointer;
+}
+
+.korb img {
+  height: 25px;
+  width: 25px;
 }
 
 .left {
-    width: 75%;
+  width: 75%;
 }
 
-.sticky{
-    position: sticky;
-    top: 20px;
+.sticky {
+  position: sticky;
+  top: 20px;
 }
 
 .right {
-    width: 30%;
-    text-align: center;
-    box-shadow: 0px 2px 2px 0px;
+  width: 30%;
+  text-align: center;
+  box-shadow: 0px 2px 2px 0px;
 }
 
 .infoDialog {
-    background-color: white;
-    width: 300px;
-    max-height: 70vh;
-    overflow: auto;
-    padding: 20px;
-    border-radius: 5px;
-
-  }
-
-.zeiten{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  background-color: white;
+  width: 300px;
+  max-height: 70vh;
+  overflow: auto;
+  padding: 20px;
+  border-radius: 5px;
 }
 
-.zeiten div{
-    display: flex;
-    justify-content: space-between;
+.zeiten {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.zeiten div {
+  display: flex;
+  justify-content: space-between;
 }
 
 .animate {
-    -webkit-animation: animatezoom 0.4s;
-    animation: animatezoom 0.4s;
-  }
-  
-  @-webkit-keyframes animatezoom {
-    from {
-      -webkit-transform: scale(0);
-    }
-    to {
-      -webkit-transform: scale(1);
-    }
-  }
-  
-  @keyframes animatezoom {
-    from {
-      transform: scale(0);
-    }
-    to {
-      transform: scale(1);
-    }
-  }
+  animation: animatezoom 0.4s;
+}
 
-footer{
-    margin-top: 20px;
-    margin-bottom: 10px;
-    text-align: center;
+@keyframes animatezoom {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+footer {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  text-align: center;
 }
 
 .right p {
-    font-size: 32px;
+  font-size: 24px;
 }
 
-.flex{
-    display: flex;
+.flex {
+  display: flex;
 }
 
-.summe{
-    padding-top: 15px;
-    padding-bottom: 15px;
-    border-top: 1px solid gray;
-    border-bottom: 1px solid gray;
-    text-align: left;
-    margin-left: 5px;
-    margin-right: 5px;
+.summe {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+  text-align: left;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .sumelement {
-    display: flex;
-    justify-content: space-between;
-    margin: 10px;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
 }
 
 @media screen and (min-width: 850px) {
-    nav{
-        display: none !important;
-    }
+  nav {
+    display: none !important;
+  }
 }
 
 @media screen and (max-width: 850px) {
-    .right, header{
-        display: none;
-    } 
+  .right,
+  header {
+    display: none;
+  }
 
-    .left{
-        width: 100%;
-    }
+  .left {
+    width: 100%;
+  }
 
-    .leiste div {
-        font-size: 1rem;
-    }
+  .leiste div {
+    font-size: 1rem;
+  }
 
-    .restaurant h1 {
-        font-size: 24px;
-    }
+  .restaurant h1 {
+    font-size: 24px;
+  }
 
-    .rest-right img{
-        height: 15px;
-    }
+  .rest-right img {
+    height: 15px;
+  }
 
-    .logo{
-        font-size: unset;
-    }
+  .restaurant img {
+    height: 20px;
+  }
 
-    header{
-        padding-left: 5px;
-        padding-right: 5px;
-    }
+  .logo {
+    font-size: unset;
+  }
+
+  header {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
 }
