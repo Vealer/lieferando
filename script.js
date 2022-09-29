@@ -3,31 +3,43 @@ let menuList = [
     title: "Favoriten",
     menu: ["Cheeseburger", "Pizza Salami", "Gyros Tasche", "Pommes", "Lahmancun"],
     price: [4.5, 6.5, 5.3, 2.5, 5.5],
+    desc: "",
+    img: "img/burger.jpg",
   },
   {
     title: "Pizza",
     menu: ["Pizza Salami", "Pizza Thunfisch", "Pizza Toscana", "Pizza Hawaii", "Pizza Gyros", "Pizza Mexikana"],
     price: [6.0, 5.5, 4.8, 7.0, 4.9, 6.9],
+    desc: "Wahl aus: Klein, Ø 26cm, Groß, Ø 30cm, Familie, 33cm x 46cm oder Party, 40cm x 60cm.",
+    img: "img/pizza.jpg",
   },
   {
     title: "Salate",
     menu: ["Bauernsalat", "Gemischter Salat", "Hühnchensalat", "Griechischer Salat", "Nudelsalat"],
     price: [2.3, 2.2, 5.2, 3.0, 4.2],
+    desc: "Wahl aus: mit Balsamico-Dressing, mit Joghurt-Dressing, ohne Dressing, mit French-Dressing und mehr.",
+    img: "img/salat.jpg",
   },
   {
     title: "Gyros",
     menu: ["Gyros Pita", "Gyros Pita Käse", "Gyros Tasche", "Gyros Teller", "Gyros Box", "Super Dürüm"],
     price: [3.7, 4.7, 6.0, 9.5, 3.0, 6.7],
+    desc: "Wahl aus: mit Zaziki, mit Kräutersauce, ohne Dip, mit Fetakäse, mit Gurken, scharf, extra und mehr.",
+    img: "img/gyros.jpg",
   },
   {
     title: "Beilagen",
     menu: ["Pommes", "Bratkartoffeln", "Chicken Nuggets", "Currywurst", "Pizzabrötchen"],
     price: [2.5, 3.5, 4.3, 2.5, 1.5],
+    desc: "Wahl aus: mit Ketchup, mit Mayonaise, ohne Dip, mit Kräuterbutter.",
+    img: "img/burger.jpg",
   },
   {
     title: "Getränke",
-    menu: ["Cola", "Fanta", "Sprite", "Wasser", "Bier", "Wein", "Kaffee"],
+    menu: ["Coca Cola 0,33l", "Fanta Mandarine 0,33l", "Sprite 0,33l", "Mineralwasser 0,5l", "Orangensaft 0,5l", "Rotwein 0,5l", "Cappucino 0,4l"],
     price: [2.5, 2.5, 2.3, 2.0, 2.8, 7, 3.2],
+    desc: "",
+    img: "img/drink.jpg",
   },
 ];
 
@@ -57,11 +69,17 @@ function renderTitleHTML(i, element) {
 
 function renderMenu(index) {
   changeTitleColor(index);
-  document.getElementById("Unten").innerHTML = "";
+  document.getElementById("Unten").innerHTML = renderMenuImgHTML(index);
   for (let i = 0; i < menuList[index].menu.length; i++) {
     const articel = menuList[index].menu[i];
     document.getElementById("Unten").innerHTML += renderMenuHTML(i, articel, index);
   }
+}
+
+function renderMenuImgHTML(index){
+return `<div class="choiceImg">
+  <img src="${menuList[index].img}">
+</div>`;
 }
 
 function changeTitleColor(index) {
@@ -71,11 +89,16 @@ function changeTitleColor(index) {
 
 function renderMenuHTML(i, articel, index) {
   return `
-    <div class="choice" ><div class="desc"><b>${articel}</b><p> ${menuList[index].price[i]
-    .toFixed(2)
-    .replace(".", ",")} €</p></div><div class="plus" onclick="addChoice('${articel}', ${
-    menuList[index].price[i]
-  })"><b>+</b></div></div>
+    <div class="choice" >
+      <div class="desc">
+        <b>${articel}</b>
+        <span>${menuList[index].desc}</span>
+        <p> ${menuList[index].price[i].toFixed(2).replace(".", ",")} €</p>
+      </div>
+      <div class="plus" onclick="addChoice('${articel}', ${menuList[index].price[i]})">
+        <b>+</b>
+      </div>
+    </div>
 `;
 }
 
