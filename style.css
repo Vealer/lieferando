@@ -121,7 +121,7 @@ header img {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background: linear-gradient(180deg, rgba(103, 176, 103, 1), rgba(103, 176, 103, 0.6)) ;
+    background: var(--color);
     height: 50px;
     color: black;
 }
