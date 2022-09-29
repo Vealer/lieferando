@@ -11,6 +11,7 @@ let menuList = [
     menu: ["Pizza Salami", "Pizza Thunfisch", "Pizza Toscana", "Pizza Hawaii", "Pizza Gyros", "Pizza Mexikana"],
     price: [6.0, 5.5, 4.8, 7.0, 4.9, 6.9],
     desc: "Wahl aus: Klein, Ø 26cm, Groß, Ø 30cm, Familie, 33cm x 46cm oder Party, 40cm x 60cm.",
+    select: ['Ø 26cm', 'Ø 30cm', '33cm x 46cm', '40cm x 60cm'],
     dialog: "Auswahl Größe:",
     img: "img/pizza.jpg",
   },
@@ -18,7 +19,8 @@ let menuList = [
     title: "Salate",
     menu: ["Bauernsalat", "Gemischter Salat", "Hühnchensalat", "Griechischer Salat", "Nudelsalat"],
     price: [2.3, 2.2, 5.2, 3.0, 4.2],
-    desc: "Wahl aus: mit Balsamico-Dressing, mit Joghurt-Dressing, ohne Dressing, mit French-Dressing und mehr.",
+    desc: "Wahl aus: mit Balsamico-Dressing, mit Joghurt-Dressing, ohne Dressing, mit French-Dressing.",
+    select: ['Balsamico-Dressing', 'Joghurt-Dressing', 'ohne Dressing', 'French-Dressing'],
     dialog: "Auswahl Dressing:",
     img: "img/salat.jpg",
   },
@@ -27,6 +29,7 @@ let menuList = [
     menu: ["Gyros Pita", "Gyros Pita Käse", "Gyros Tasche", "Gyros Teller", "Gyros Box", "Super Dürüm"],
     price: [3.7, 4.7, 6.0, 9.5, 3.0, 6.7],
     desc: "Wahl aus: mit Zaziki, mit Kräutersauce, ohne Dip, mit Fetakäse, mit Gurken, scharf, extra und mehr.",
+    select: ['Zaziki', 'Kräutersauce', 'Fetakäse', 'Scharf'],
     dialog: "Auswahl Extras:",
     img: "img/gyros.jpg",
   },
@@ -35,12 +38,21 @@ let menuList = [
     menu: ["Pommes", "Cheeseburger", "Chicken Nuggets", "Currywurst", "Pizzabrötchen"],
     price: [2.5, 4.5, 4.3, 2.5, 1.5],
     desc: "Wahl aus: mit Ketchup, mit Mayonaise, ohne Dip, mit Kräuterbutter.",
+    select: ['Ketchup', 'Mayonaise', 'ohne Dip', 'Kräuterbutter'],
     dialog: "Auswahl Dip:",
     img: "img/burger.jpg",
   },
   {
     title: "Getränke",
-    menu: ["Coca Cola 0,33l", "Fanta Mandarine 0,33l", "Sprite 0,33l", "Mineralwasser 0,5l", "Orangensaft 0,5l", "Rotwein 0,5l", "Cappucino 0,4l"],
+    menu: [
+      "Coca Cola 0,33l",
+      "Fanta Mandarine 0,33l",
+      "Sprite 0,33l",
+      "Mineralwasser 0,5l",
+      "Orangensaft 0,5l",
+      "Rotwein 0,5l",
+      "Cappucino 0,4l",
+    ],
     price: [2.5, 2.5, 2.3, 2.0, 2.8, 7, 3.2],
     desc: "",
     img: "img/drink.jpg",
@@ -80,8 +92,8 @@ function renderMenu(index) {
   }
 }
 
-function renderMenuImgHTML(index){
-return `<div class="choiceImg">
+function renderMenuImgHTML(index) {
+  return `<div class="choiceImg">
   <img src="${menuList[index].img}">
 </div>`;
 }
@@ -149,39 +161,43 @@ function renderSum() {
   document.getElementById("total").innerHTML = `${sum.toFixed(2).replace(".", ",")} €`;
 }
 
-function renderInfo(){
-  document.getElementById('fullscreenInfo').classList.remove('d-none');
+function renderInfo() {
+  document.getElementById("fullscreenInfo").classList.remove("d-none");
 }
 
-function changeHeart(){
-  let heart = document.getElementById('heart');
-  if(heart.src.includes('img/heart-white.png'))
-    heart.src = 'img/heart-black.png'
-  else
-    heart.src = 'img/heart-white.png';
+function changeHeart() {
+  let heart = document.getElementById("heart");
+  if (heart.src.includes("img/heart-white.png")) heart.src = "img/heart-black.png";
+  else heart.src = "img/heart-white.png";
 }
 
-function openChoiceDialog(index, i){
-  if(menuList[index].desc){
-    document.getElementById('fullscreenChoice').classList.remove('d-none');
+function openChoiceDialog(index, i) {
+  if (menuList[index].desc) {
+    document.getElementById("fullscreenChoice").classList.remove("d-none");
     renderExtras(index, i);
   } else {
     let bestellung = menuList[index].menu[i];
     let preis = menuList[index].price[i];
-    addChoice(bestellung, preis)
+    addChoice(bestellung, preis);
   }
 }
 
-function renderExtras(index, i){
-  let extras = document.getElementById('ChoiceDialog');
+function renderExtras(index, i) {
+  let extras = document.getElementById("ChoiceDialog");
   extras.innerHTML = renderExtrasHTML(index, i);
 }
 
-function renderExtrasHTML(index, i){
+function renderExtrasHTML(index, i) {
   return `
     <div>
       <h4>${menuList[index].menu[i]}</h4>
       <h6>${menuList[index].dialog}</h6>
+      <select class="form-select" aria-label="Default select example">
+        <option value="0" selected>${menuList[index].select[0]}</option>
+        <option value="1">${menuList[index].select[1]}</option>
+        <option value="2">${menuList[index].select[2]}</option>
+        <option value="3">${menuList[index].select[3]}</option>
+      </select>
     </div>
   `;
 }
@@ -204,8 +220,8 @@ function plusChoice(index) {
   renderSum();
 }
 
-function closeInfoDialog(){
-  document.getElementById('fullscreenInfo').classList.add('d-none');
+function closeInfoDialog() {
+  document.getElementById("fullscreenInfo").classList.add("d-none");
 }
 
 fullscreenInfo.addEventListener("click", function (e) {
@@ -216,8 +232,8 @@ infoDialog.addEventListener("click", function (e) {
   e.stopPropagation();
 });
 
-function closeChoiceDialog(){
-  document.getElementById('fullscreenChoice').classList.add('d-none');
+function closeChoiceDialog() {
+  document.getElementById("fullscreenChoice").classList.add("d-none");
 }
 
 fullscreenChoice.addEventListener("click", function (e) {
