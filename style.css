@@ -92,7 +92,7 @@ header img {
 }
 
 .restaurant img {
-    height: 35px;
+    height: 20px;
 }
 
 .restaurant h1 {
@@ -102,15 +102,17 @@ header img {
 }
 
 .stars {
-    height: 40px;
+    height: 20px;
     display: flex;
     align-items: center;
-    font-size: 20px;
+    font-size: 15px;
 }
 
 .rest-right {
     margin: 20px;
 }
+
+
 
 .rest-right img:hover {
     cursor: pointer;
@@ -309,7 +311,7 @@ footer{
 }
 
 @media screen and (max-width: 850px) {
-    .right, h2, header{
+    .right, header{
         display: none;
     } 
 
@@ -322,7 +324,11 @@ footer{
     }
 
     .restaurant h1 {
-        font-size: 30px;
+        font-size: 24px;
+    }
+
+    .rest-right img{
+        height: 15px;
     }
 
     .logo{
