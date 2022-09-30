@@ -147,6 +147,15 @@ header img {
   align-items: center;
 }
 
+.order{
+  display: flex;
+  justify-content: center;
+}
+
+.order button{
+  min-width: 180px;
+}
+
 .plus {
   font-size: 20px;
   border-left: 1px solid;

@@ -162,6 +162,7 @@ function renderBasketHTML(i, element) {
             </div>
         </div>
         <h6>${selectExtra[i]}</h6>
+
         `;
 }
 
@@ -291,3 +292,8 @@ fullscreenChoice.addEventListener("click", function (e) {
 choiceDialog.addEventListener("click", function (e) {
   e.stopPropagation();
 });
+
+btnOrder.addEventListener("click", function (e) {
+  confirm("Ist bestellt!")
+});
+
