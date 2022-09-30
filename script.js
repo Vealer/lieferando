@@ -37,7 +37,7 @@ let menuList = [
     selectable: ["Zaziki", "Kräutersauce", "Fetakäse", "Scharf"],
     select: [],
     dialog: "Auswahl Extras:",
-    img: "img/gyros.jpg",
+    img: "img/gyros.jpeg",
   },
   {
     title: "Beilagen",
@@ -142,11 +142,11 @@ function addChoice(bestellung, preis, extra) {
 
 function renderBasket() {
   sum = 0;
-  document.getElementById("Warenkorb").innerHTML = "";
+  document.getElementById("basket").innerHTML = "";
   for (let i = 0; i < select.length; i++) {
     const element = select[i];
     sum += selectPrice[i] * amount[i];
-    document.getElementById("Warenkorb").innerHTML += renderBasketHTML(i, element);
+    document.getElementById("basket").innerHTML += renderBasketHTML(i, element);
   }
 }
 
