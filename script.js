@@ -67,24 +67,11 @@ let menuList = [
   },
 ];
 
-let favoriten = [
-  {
-    title: "Favoriten",
-    menu: [menuList[3].menu, "Pizza Salami", "Gyros Tasche", "Pommes", "Lahmancun"],
-    price: [4.5, 6.5, 5.3, 2.5, 5.5],
-    desc: "",
-    selectable: [],
-    select: [],
-    dialog: "",
-    img: "img/burger.jpg",
-  },
-];
-
-let menge = [];
-let auswahl = [];
-let auswahlPreis = [];
-let auswahlExtra = [];
-let lieferkosten = 3;
+let amount = [];
+let select = [];
+let selectPrice = [];
+let selectExtra = [];
+let delivery = 3;
 let sum = 0;
 
 function init() {
@@ -141,47 +128,47 @@ function renderMenuHTML(i, articel, index) {
 }
 
 function addChoice(bestellung, preis, extra) {
-  if (auswahl.indexOf(bestellung) == -1) {
-    auswahl.push(bestellung);
-    auswahlPreis.push(preis);
-    auswahlExtra.push(extra);
-    menge.push(1);
+  if (select.indexOf(bestellung) == -1) {
+    select.push(bestellung);
+    selectPrice.push(preis);
+    selectExtra.push(extra);
+    amount.push(1);
   } else {
-    menge[auswahl.indexOf(bestellung)] += 1;
+    amount[select.indexOf(bestellung)] += 1;
   }
-  renderWarenkorb();
+  renderBasket();
   renderSum();
 }
 
-function renderWarenkorb() {
+function renderBasket() {
   sum = 0;
   document.getElementById("Warenkorb").innerHTML = "";
-  for (let i = 0; i < auswahl.length; i++) {
-    const element = auswahl[i];
-    sum += auswahlPreis[i] * menge[i];
-    document.getElementById("Warenkorb").innerHTML += renderWarenkorbHTML(i, element);
+  for (let i = 0; i < select.length; i++) {
+    const element = select[i];
+    sum += selectPrice[i] * amount[i];
+    document.getElementById("Warenkorb").innerHTML += renderBasketHTML(i, element);
   }
 }
 
-function renderWarenkorbHTML(i, element) {
+function renderBasketHTML(i, element) {
   return `<div>
             <div>
                 <div onclick='plusChoice(${i})'><img src="img/plus.png"></div>
                 <div onclick='minusChoice(${i})'><img src="img/minus.png"></div>
-                <b>${menge[i]} x ${element} </b>
+                <b>${amount[i]} x ${element} </b>
             </div> 
             <div> 
-                <b>${auswahlPreis[i].toFixed(2).replace(".", ",")} €</b>
+                <b>${selectPrice[i].toFixed(2).replace(".", ",")} €</b>
             </div>
         </div>
-        <h6>${auswahlExtra[i]}</h6>
+        <h6>${selectExtra[i]}</h6>
         `;
 }
 
 function renderSum() {
   let zwischensumme = sum;
-  sum += lieferkosten;
-  document.getElementById("lieferkosten").innerHTML = `${lieferkosten.toFixed(2).replace(".", ",")} €`;
+  sum += delivery;
+  document.getElementById("delivery").innerHTML = `${delivery.toFixed(2).replace(".", ",")} €`;
   document.getElementById("zwischensumme").innerHTML = `${zwischensumme.toFixed(2).replace(".", ",")} €`;
   document.getElementById("total").innerHTML = `${sum.toFixed(2).replace(".", ",")} €`;
 }
@@ -260,24 +247,24 @@ function addChoiceExtra(index, i) {
   let preis = menuList[index].price[i];
   addChoice(bestellung, preis, _extra);
   closeChoiceDialog();
-  renderWarenkorb();
+  renderBasket();
 }
 
 function minusChoice(index) {
-  if (menge[index] > 1) {
-    menge[index]--;
+  if (amount[index] > 1) {
+    amount[index]--;
   } else {
-    auswahl.splice(index, 1);
-    auswahlPreis.splice(index, 1);
-    menge.splice(index, 1);
+    select.splice(index, 1);
+    selectPrice.splice(index, 1);
+    amount.splice(index, 1);
   }
-  renderWarenkorb();
+  renderBasket();
   renderSum();
 }
 
 function plusChoice(index) {
-  menge[index]++;
-  renderWarenkorb();
+  amount[index]++;
+  renderBasket();
   renderSum();
 }
 
