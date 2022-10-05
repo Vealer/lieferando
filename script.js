@@ -294,6 +294,7 @@ choiceDialog.addEventListener("click", function (e) {
 });
 
 btnOrder.addEventListener("click", function (e) {
-  confirm("Ist bestellt!")
+  confirm("Ist bestellt!");
+  window.location.reload();
 });
 
